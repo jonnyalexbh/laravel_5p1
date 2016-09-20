@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>College</title>
+        <title>Index</title>
     </head>
     <body>
-
+        Vista index test
     </body>
 </html>
