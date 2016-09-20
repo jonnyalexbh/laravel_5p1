@@ -71,6 +71,10 @@ Route::get('vista', function() { /* retorna vista */
     return view('test/index');
 });
 
+Route::get('vistaBlade', function() { /* retorna vista blade */
+    return view('test/blade-test');
+});
+
 Route::get('languageExito', function() { /* retorna una vista con parametros */
     return view('test/parameter', ['exito' => 'Total']);
 });
