@@ -10,17 +10,17 @@
   <div class="login_wrapper">
     <div class="animate form login_form">
       <section class="login_content">
-        <form action="#" method="post">
+        <form action="{{ route('user_index_path')}}" method="post">
           {{ csrf_field() }}
           <h1>Login Collage</h1>
           <div>
-            <input type="text" class="form-control" placeholder="Username" required="" />
+            <input type="text" class="form-control" placeholder="Username" />
           </div>
           <div>
-            <input type="password" class="form-control" placeholder="Password" required="" />
+            <input type="password" class="form-control" placeholder="Password" />
           </div>
           <div>
-            <a class="btn btn-default submit" href="#">Acceder</a>
+            <input class="btn btn-default btn-sm" value="Acceder" type="submit">
             <a class="reset_pass" href="#">¿Perdiste tu contraseña?</a>
           </div>
 

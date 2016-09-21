@@ -22,3 +22,15 @@ elixir(function (mix) {
     'login.css'
   ], 'public/css/login.css');
 });
+
+elixir(function (mix) {
+  mix.styles([
+    'master.css'
+  ], 'public/css/master.css');
+});
+
+elixir(function (mix) {
+  mix.scripts([
+    'menu.js'
+  ], 'public/js/menu.js');
+});

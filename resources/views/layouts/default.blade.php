@@ -4,14 +4,99 @@
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>College</title>
-        <link href="{{'css/bootstrap.css'}}" rel="stylesheet" type="text/css"/>
-        @yield('css')
-    </head>
-    <body>
-        @yield('content')
-        @yield('js')
-    </body>
+<head>
+  <meta charset="utf-8">
+  <title>College</title>
+  <!-- application -->
+  <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="{{asset('css/master.css')}}" media="screen" title="no title" charset="utf-8">
+  <!-- font-awesome framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  @yield('css')
+</head>
+<body>
+  <div class="brand clearfix">
+    <a href="#" class="logo"><img src="img/logo.png" class="img-responsive" alt=""></a>
+    <span class="menu-btn"><i class="fa fa-bars"></i></span>
+    <ul class="ts-profile-nav">
+      <li><a href="#">Ajustes</a></li>
+      <li class="ts-account">
+        <a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Cuenta <i class="fa fa-angle-down hidden-side"></i></a>
+        <ul>
+          <li><a href="#">Mi cuenta</a></li>
+          <li><a href="#">Editar cuenta</a></li>
+          <li><a href="{{ route('user_destroy_path')}}">Cerrar sesión</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ts-main-content">
+    <nav class="ts-sidebar">
+      <ul class="ts-sidebar-menu">
+        <li class="ts-label">Buscar</li>
+        <li>
+          <input type="text" class="ts-sidebar-search" placeholder="Busca aquí...">
+        </li>
+        <li class="ts-label">PRINCIPAL</li>
+        <li class="open"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-desktop"></i> Materias</a>
+          <ul>
+            <li><a href="#">Nueva materia</a></li>
+            <li><a href="#">Nuevo docente en materia</a></li>
+            <li><a href="#">Nuevo estudiante en materia</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-table"></i> Carreras</a></li>
+        <li><a href="#"><i class="fa fa-edit"></i> Tu Perfil</a></li>
+        <li><a href="#"><i class="fa fa-pie-chart"></i> Cerrar sesión</a></li>
+        <li><a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown</a>
+          <ul>
+            <li><a href="#">2nd level</a></li>
+            <li><a href="#">2nd level</a></li>
+            <li><a href="#">3rd level</a>
+              <ul>
+                <li><a href="#">3rd level</a></li>
+                <li><a href="#">3rd level</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-files-o"></i> Sample Pages</a>
+          <ul>
+            <li><a href="#">Blank page</a></li>
+            <li><a href="#">Login page</a></li>
+          </ul>
+        </li>
+
+        <!-- Account from above -->
+        <ul class="ts-profile-nav">
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Settings</a></li>
+          <li class="ts-account">
+            <a href="#"><img src="img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
+            <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Edit Account</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </ul>
+    </nav>
+
+    <div class="content-wrapper">
+      @yield('content')
+    </div>
+
+  </div>
+  <!-- Jquery framework -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <!-- Js -->
+  <script src="{{asset('js/menu.js')}}" charset="utf-8"></script>
+  <!-- Bootstrap framework -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
 </html>

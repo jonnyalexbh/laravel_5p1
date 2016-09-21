@@ -15,7 +15,7 @@
   @yield('css')
 </head>
 <body class="login">
-
+  
   <div class="container">
     @yield('content')
   </div>
