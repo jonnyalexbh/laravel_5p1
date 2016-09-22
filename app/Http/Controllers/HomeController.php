@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
 
-class UsersController extends Controller {
+class HomeController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $users = User::all();
-        return view('user.users', compact('users'));
+        return view('user.home');
     }
 
     /**
@@ -24,7 +22,7 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('user.create');
+        //
     }
 
     /**
@@ -75,7 +73,7 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy() {
-        
+        return view('login');
     }
 
 }
