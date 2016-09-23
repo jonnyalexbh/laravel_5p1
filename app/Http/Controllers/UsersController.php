@@ -15,7 +15,7 @@ class UsersController extends Controller {
      */
     public function index() {
         $users = User::all();
-        return view('user.users', compact('users'));
+        return view('user.index', compact('users'));
     }
 
     /**
@@ -34,7 +34,15 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+
+        $data = [
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password'])
+        ];
+
+        User::create($data);
+        return redirect('users')->with('message', 'store');
     }
 
     /**
@@ -54,7 +62,8 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        //
+        $user = User::find($id);
+        return view('user.edit', ['user' => $user]);
     }
 
     /**

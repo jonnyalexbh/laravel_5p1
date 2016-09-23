@@ -41,6 +41,16 @@ Route::get('user/create', [
     'as' => 'user_create_path',
 ]);
 
+Route::post('user/create', [
+    'uses' => 'UsersController@store',
+    'as' => 'user_store_path',
+]);
+
+Route::get('user/edit/{id}', [
+    'uses' => 'UsersController@edit',
+    'as' => 'user_edit_path',
+]);
+
 
 
 // Test routes...
