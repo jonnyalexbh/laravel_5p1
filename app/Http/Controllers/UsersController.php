@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Session;
+use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserEditRequest;
 
 class UsersController extends Controller {
 
@@ -27,14 +29,14 @@ class UsersController extends Controller {
   public function create() {
     return view('user.create');
   }
-  
+
   /**
   * Store a newly created resource in storage.
   *
   * @param  \Illuminate\Http\Request  $request
   * @return \Illuminate\Http\Response
   */
-  public function store(Request $request) {
+  public function store(UserCreateRequest $request) {
 
     $data = [
       'name' => $request['name'],
@@ -75,7 +77,7 @@ class UsersController extends Controller {
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, $id) {
+  public function update(UserEditRequest $request, $id) {
     $user = User::find($id);
     $user->fill($request->all());
     $user->save();

@@ -8,12 +8,14 @@
 @section('content')
 
 <div class="container-fluid">
-  
+
   <div class="row">
     <div class="col-md-12">
       <h2 class="page-title">Editar usuario</h2>
     </div>
   </div>
+  
+  @include('layouts.request')
 
   <div class="row">
     <div class="col-md-11">
