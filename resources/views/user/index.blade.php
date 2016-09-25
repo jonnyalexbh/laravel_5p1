@@ -43,6 +43,8 @@
     </tbody>
   </table>
 
+  {!! $users->render() !!}
+
 </div>
 
 @stop
