@@ -11,6 +11,9 @@ use App\Http\Requests\UserEditRequest;
 
 class UsersController extends Controller {
 
+  public function __construct(){
+    $this->middleware('auth', ['only' => ['index', 'edit', 'create']]);
+  }
   /**
   * Display a listing of the resource.
   *
@@ -20,7 +23,7 @@ class UsersController extends Controller {
     $users = User::paginate(2);
     return view('user.index', compact('users'));
   }
-
+  
   /**
   * Show the form for creating a new resource.
   *
