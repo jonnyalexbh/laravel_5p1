@@ -14,8 +14,8 @@
       <h2 class="page-title">Editar usuario</h2>
     </div>
   </div>
-  
-  @include('layouts.request')
+
+  @include('layouts.alerts.request')
 
   <div class="row">
     <div class="col-md-11">

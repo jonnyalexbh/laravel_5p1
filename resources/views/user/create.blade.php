@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  @include('layouts.request')
+  @include('layouts.alerts.request')
 
   <div class="row">
     <div class="col-md-11">

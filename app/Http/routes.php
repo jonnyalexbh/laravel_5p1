@@ -28,6 +28,17 @@ Route::get('/', [
 ]);
 
 
+// Login routes...
+
+Route::post('login', [
+  'uses' => 'LogController@store',
+  'as' => 'log_store_path',
+]);
+
+Route::get('logout', [
+  'uses' => 'LogController@logout',
+  'as' => 'log_logout_path',
+]);
 
 // Users routes...
 
