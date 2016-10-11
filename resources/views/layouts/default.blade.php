@@ -44,9 +44,9 @@
                     @if(Auth::user()->id == 1)
                     <li><a href="#"><i class="fa fa-table"></i> Carreras</a></li>
                     @endif
-                    <li><a href="#"><i class="fa fa-files-o"></i> Catálogos</a>
+                    <li class="{{ Request::is('catalogs*') ? 'open' : '' }}"><a href="#"><i class="fa fa-files-o"></i> Catálogos</a>
                         <ul>
-                            <li><a href="#">Generos</a></li>
+                            <li><a href="{{ route('genders_index_path')}}">Generos</a></li>
                             <li><a href="#">Tipos de documento</a></li>
                         </ul>
                     </li>
