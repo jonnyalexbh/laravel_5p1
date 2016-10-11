@@ -12,9 +12,9 @@ class UpdateUsersTable extends Migration {
      */
     public function up() {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_lock');
-            $table->date('date_pwd_exp');
-            $table->timestamps();
+            $table->boolean('is_lock')->default(false);
+            $table->date('date_pwd_exp')->nullable();
+            $table->nullableTimestamps();
         });
     }
 
@@ -24,10 +24,7 @@ class UpdateUsersTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_lock');
-            $table->dropColumn('date_pwd_exp');
-        });
+        
     }
 
 }
