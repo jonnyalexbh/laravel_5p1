@@ -31,6 +31,7 @@ elixir(function (mix) {
 
 elixir(function (mix) {
   mix.scripts([
-    'menu.js'
-  ], 'public/js/menu.js');
+    'menu.js',
+    'application.js'
+  ], 'public/js/application.js');
 });
