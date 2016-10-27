@@ -16,6 +16,17 @@
     </div>
   </div>
 
+  <table class="table-responsive table-striped table-condensed table-bordered" width="100%">
+    <thead>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Acciones</th>
+    </thead>
+
+    <tbody id="datos"></tbody>
+    
+  </table>
+
 </div>
 
 @stop

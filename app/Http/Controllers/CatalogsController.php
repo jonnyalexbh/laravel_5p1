@@ -56,7 +56,11 @@ class CatalogsController extends Controller {
   /*
   * Document type
   */
-  public function getDocumentype() {
+  public function getDocumentype(Request $request) {
+    if ($request->ajax()) {
+      $tpdoc = Tp_doc::all();
+      return response()->json($tpdoc);
+    }
     return view('catalogs.documentype');
   }
 

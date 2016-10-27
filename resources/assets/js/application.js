@@ -1,3 +1,7 @@
+/*
+* create documentype
+*/
+
 $("#saveDocumenttype").click(function(){
   var dato = $("#nameDocumentype").val();
   var route = "/catalogs/create/documentype";
@@ -19,4 +23,20 @@ $("#saveDocumenttype").click(function(){
     }
   });
 
+});
+
+/*
+* list documentype
+*/
+
+$(document).ready(function(){
+  var tablaDatos = $("#datos");
+  var route = "/catalogs/documentype";
+
+  $("#datos").empty();
+  $.get(route, function(res){
+    $(res).each(function(key,value){
+      tablaDatos.append("<tr><td>"+value.id+"</td><td>"+value.name+"</td><td><button class='btn btn-default'>Editar</button><button class='btn btn-warning'>Eliminar</button></td></tr>");
+    });
+  });
 });
