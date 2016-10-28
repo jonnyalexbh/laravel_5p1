@@ -10,6 +10,10 @@ use Session;
 
 class LogController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('guest', ['except' => 'logout']);
+  }
   /**
   * Display a listing of the resource.
   *
@@ -17,7 +21,7 @@ class LogController extends Controller
   */
   public function index()
   {
-    //
+    return view('login');
   }
 
   /**
@@ -39,7 +43,15 @@ class LogController extends Controller
   public function store(LoginRequest $request)
   {
     if(Auth::attempt(['email'=>$request['email'], 'password'=>$request['password']])){
-      return redirect('home');
+
+      if(Auth::user()->is_lock==0)
+      {
+        return redirect('home');
+      }
+      else {
+        Session::flash('message-error','Usuario inactivo');
+        return redirect('/');
+      }
     }
     Session::flash('message-error','Datos son incorrectos');
     return redirect('/');

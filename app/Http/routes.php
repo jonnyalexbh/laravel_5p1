@@ -13,18 +13,14 @@
 
 // Home routes...
 
-Route::get('/', function () {
-  return view('login');
-});
+Route::get('/', [
+  'uses' => 'LogController@index',
+  'as' => 'log_index_path',
+]);
 
 Route::match(['get', 'post'], 'home', [
   'uses' => 'HomeController@index',
   'as' => 'home_index_path',
-]);
-
-Route::get('/', [
-  'uses' => 'HomeController@destroy',
-  'as' => 'home_destroy_path',
 ]);
 
 // Login routes...
