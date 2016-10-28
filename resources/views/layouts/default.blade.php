@@ -46,7 +46,9 @@
         @endif
         <li class="{{ Request::is('catalogs*') ? 'open' : '' }}"><a href="#"><i class="fa fa-files-o"></i> Catálogos</a>
           <ul>
+            @role('admin')
             <li><a href="{{ route('genders_index_path')}}">Generos</a></li>
+            @endrole
             <li><a href="{{ route('documentype_index_path')}}">Tipos de documento</a></li>
           </ul>
         </li>

@@ -46,6 +46,11 @@ Route::match(['get', 'post'], 'users', [
   'as' => 'users_index_path',
 ]);
 
+Route::get('create-post', function () {
+  return 'Hello World';
+});
+
+
 Route::get('user/create', [
   'uses' => 'UsersController@create',
   'as' => 'user_create_path',
@@ -119,6 +124,35 @@ Route::post('catalogs/create/documentype', [
   'uses' => 'CatalogsController@storeDocumentype',
   'as' => 'documentype_create_path',
 ]);
+
+// test entrust...
+
+Route::group(['middleware' => 'auth'], function () {
+
+  Route::get('people', function ()    {
+
+    if(Auth::user()->hasRole('admin'))
+    {
+      return "Bien admin";
+    }
+
+  });
+
+  Route::get('people2', function () {
+    if(Auth::user()->hasRole('limitado'))
+    {
+      return "Bien limitado";
+    }
+  });
+
+});
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']],  function () {
+  Route::get('people', function ()    {
+    return "Hola jonny";
+  });
+});
 
 // Test routes...
 
