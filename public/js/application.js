@@ -78,4 +78,8 @@ $(document).ready(function(){
   });
 });
 
+/*
+* load permission
+*/
+
 //# sourceMappingURL=application.js.map

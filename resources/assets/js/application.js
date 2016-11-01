@@ -40,3 +40,7 @@ $(document).ready(function(){
     });
   });
 });
+
+/*
+* load permission
+*/

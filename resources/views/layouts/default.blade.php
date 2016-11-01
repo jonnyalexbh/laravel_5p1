@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="{{asset('css/master.css')}}" media="screen" title="no title" charset="utf-8">
   <!-- font-awesome framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   @yield('css')
 </head>
 <body>
@@ -53,6 +53,7 @@
           </ul>
         </li>
         <li class="{{ Request::is('user*') ? 'open' : '' }}"><a href="{{ route('users_index_path')}}"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</a></li>
+        <li class="#"><a href="{{ route('roles_index_path')}}"><i class="fa fa-users" aria-hidden="true"></i> Roles</a></li>
         <li><a href="#"><i class="fa fa-edit"></i> Tu Perfil</a></li>
         <li><a href="{{ route('log_logout_path')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Cerrar sesión</a></li>
 
@@ -79,11 +80,12 @@
 
   </div>
   <!-- Jquery framework -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <!-- Js -->
   <script src="{{asset('js/application.js')}}" charset="utf-8"></script>
   <!-- Bootstrap framework -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+  @yield('js')
 </body>
 </html>

@@ -72,6 +72,30 @@ Route::get('user/destroy/{id}', [
   'as' => 'user_destroy_path',
 ]);
 
+// Roles routes...
+
+Route::match(['get', 'post'], 'roles', [
+  'uses' => 'RolesController@index',
+  'as' => 'roles_index_path',
+]);
+
+// Permission routes...
+
+Route::get('perms/assigned', [
+  'uses' => 'PermisosController@permsAssigned',
+  'as' => 'permission_assigned_path',
+]);
+
+Route::post('perms/assign', [
+  'uses' => 'PermisosController@assign',
+  'as' => 'permission_assign_path',
+]);
+
+Route::delete('perms/remove', [
+  'uses' => 'PermisosController@remove',
+  'as' => 'permission_remove_path',
+]);
+
 // Genders routes...
 
 Route::match(['get', 'post'], 'catalogs/genders', [
