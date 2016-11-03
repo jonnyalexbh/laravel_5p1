@@ -25,7 +25,8 @@ elixir(function (mix) {
 
 elixir(function (mix) {
   mix.styles([
-    'master.css'
+    'master.css',
+    'custom.css'
   ], 'public/css/master.css');
 });
 

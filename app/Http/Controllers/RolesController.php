@@ -41,7 +41,14 @@ class RolesController extends Controller
   */
   public function store(Request $request)
   {
-    //
+    Role::create($request->all());
+    /*
+    $data = $request->all();
+    $role = new Role;
+    $role->name = $data["name"];
+    $role->save();
+    */
+    return redirect('roles');
   }
 
   /**
@@ -87,5 +94,18 @@ class RolesController extends Controller
   public function destroy($id)
   {
     //
+  }
+
+  public function storeAjax(Request $request)
+  {
+    if($request->ajax()){
+      $data=Role::create($request->all());
+
+      return response()->json([
+        "mensaje" => "rol creado",
+        "datos"=> $data
+      ]);
+
+    }
   }
 }

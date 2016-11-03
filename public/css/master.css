@@ -746,4 +746,10 @@ li {
   width: 100%;
 }
 
+/* Label align left
+-------------------------------------------------- */
+.form-horizontal .control-label{
+    text-align:left;
+}
+
 /*# sourceMappingURL=master.css.map */

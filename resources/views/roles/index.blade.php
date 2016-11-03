@@ -16,17 +16,17 @@
   <div class="row">
     <div class="col-md-12">
       <h2 class="page-title">Roles</h2>
-      <p class="text-right"><a href="#" class="btn btn-warning">Crear Rol</a></p>
+      <p class="text-right"><a href="#" class="btn btn-warning" data-toggle="modal" data-target=".create-modal">Crear Rol</a></p>
     </div>
   </div>
-  <table class="table">
+  <table class="table" id="roles">
     <thead>
       <tr>
         <th>#</th>
         <th>Name</th>
         <th>Description</th>
         <th>Permissions</th>
-        <th>Actions</th>
+        <th colspan="2">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -36,17 +36,18 @@
         <td>{{ $role->name }}</td>
         <td>{{ $role->description }}</td>
         <td>
-          <button id="jonny" type="button" class="btn btn-info btn-xs get-perms" roleId="{{ $role->id }}" data-toggle="modal" data-target=".permissions-modal">Permissions</button>
+          <button type="button" class="btn btn-info btn-xs get-perms" roleId="{{ $role->id }}" data-toggle="modal" data-target=".permissions-modal">Permissions</button>
         </td>
-        <td>
-          <a href="#" class=""><i class="glyphicon glyphicon-pencil"></i></a>
-          <a href="#" data-method="delete" data-token="{{csrf_token()}}" data-confirm="Are you sure?"><i class="glyphicon glyphicon-trash"></i></a>
-        </td>
+        <td><a href="#">Editar</a></td>
+        <td><a href="#">Eliminar</a></td>
       </tr>
       @endforeach
     </tbody>
   </table>
 </div>
+
+<!-- Modal create role -->
+@include('roles.createModal')
 
 <!-- Modal -->
 @include('roles.permissions.modal')
@@ -107,6 +108,7 @@ $(document).ready(function () {
     $('.get-perms').on('click', function(){
 
       roleId = $(this).attr('roleId');
+      console.log("dfgfd");
 
       $('#select-perms').multiSelect('refresh');
       $('#select-perms option').attr('selected', false);

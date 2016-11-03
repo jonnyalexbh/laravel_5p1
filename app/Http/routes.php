@@ -79,6 +79,16 @@ Route::match(['get', 'post'], 'roles', [
   'as' => 'roles_index_path',
 ]);
 
+Route::post('role/create', [
+  'uses' => 'RolesController@store',
+  'as' => 'role_store_path',
+]);
+
+Route::post('role/create/ajax', [
+  'uses' => 'RolesController@storeAjax',
+  'as' => 'role_storeAjax_path',
+]);
+
 // Permission routes...
 
 Route::get('perms/assigned', [
