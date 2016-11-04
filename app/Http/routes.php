@@ -72,6 +72,13 @@ Route::get('user/destroy/{id}', [
   'as' => 'user_destroy_path',
 ]);
 
+// Students routes...
+
+Route::get('students', [
+  'uses' => 'StudentsController@index',
+  'as' => 'student_index_path',
+]);
+
 // Roles routes...
 
 Route::match(['get', 'post'], 'roles', [
