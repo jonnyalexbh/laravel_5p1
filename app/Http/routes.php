@@ -35,6 +35,12 @@ Route::get('logout', [
   'as' => 'log_logout_path',
 ]);
 
+// Users angularjs routes...
+
+Route::get('users-angularjs', function(){
+  return view('users-angularjs.index');
+});
+
 // Users routes...
 
 Route::match(['get', 'post'], 'users', [

@@ -36,3 +36,15 @@ elixir(function (mix) {
     'application.js'
   ], 'public/js/application.js');
 });
+
+elixir(function (mix) {
+  mix.scripts([
+    'users.js'
+  ], 'public/js/users.js');
+});
+
+elixir(function (mix) {
+  mix.scripts([
+    'services/user-service.js'
+  ], 'public/js/services/user-service.js');
+});
