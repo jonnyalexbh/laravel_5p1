@@ -48,3 +48,9 @@ elixir(function (mix) {
     'services/user-service.js'
   ], 'public/js/services/user-service.js');
 });
+
+elixir(function (mix) {
+  mix.scripts([
+    'services/test-factory.js'
+  ], 'public/js/services/test-factory.js');
+});
