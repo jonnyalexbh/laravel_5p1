@@ -1,10 +1,11 @@
 angular.module('myApp', [])
-.controller('myCtrl', ['$scope', 'testService', 'testFactory', function ($scope, testService, testFactory) {
-  $scope.name = "Hola mundooooooooooooo";
-  $scope.dataServiceHello = testService.hello('jonny');
-  $scope.dataServiceHelloWorld = testService.helloWorld('jonny');
-  $scope.factoryTest= testFactory.getCustomers();
-  console.log($scope.factoryTest);
+.controller('myCtrl', ['$scope', 'testFactory', function ($scope, testFactory) {
+  testFactory.getUsers()
+  .then(function mySucces(response) {
+    $scope.data = response.data;
+  }, function myError(response) {
+    $scope.data = response.statusText;
+  });
 }]
 );
 

@@ -37,9 +37,12 @@ Route::get('logout', [
 
 // Users angularjs routes...
 
-Route::get('users-angularjs', function(){
-  return view('users-angularjs.index');
-});
+Route::get('users/angularjs', 'UsersAngularController@index');
+
+Route::get('users-angularjs', [
+  'as' => 'users_angular_path',
+  'uses' => 'UsersAngularController@users'
+]);
 
 // Users routes...
 
