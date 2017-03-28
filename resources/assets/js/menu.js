@@ -1,5 +1,5 @@
 /*
-* menu
+* file menu.js
 */
 
 $(document).ready(function () {

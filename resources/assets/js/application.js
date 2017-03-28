@@ -1,4 +1,8 @@
 /*
+* file application.js
+*/
+
+/*
 * create documentype
 */
 

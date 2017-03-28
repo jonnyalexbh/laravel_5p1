@@ -36,21 +36,13 @@ elixir(function (mix) {
     'application.js'
   ], 'public/js/application.js');
 });
-
+/*
+* app angularjs users
+*/
 elixir(function (mix) {
   mix.scripts([
-    'users.js'
-  ], 'public/js/users.js');
-});
-
-elixir(function (mix) {
-  mix.scripts([
-    'services/user-service.js'
-  ], 'public/js/services/user-service.js');
-});
-
-elixir(function (mix) {
-  mix.scripts([
-    'services/test-factory.js'
-  ], 'public/js/services/test-factory.js');
+    'app/app-users.js',
+    'app/controllers/usersCtrl.js',
+    'app/services/users-factory.js'
+  ], 'public/app/users-angular.js');
 });
