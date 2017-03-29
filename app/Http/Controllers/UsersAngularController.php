@@ -10,9 +10,6 @@ use App\User;
 
 class UsersAngularController extends Controller
 {
-  public function __construct(){
-    $this->middleware('auth');
-  }
   /**
   * index
   *

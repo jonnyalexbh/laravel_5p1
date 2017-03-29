@@ -54,8 +54,8 @@
         </li>
         <li class=""><a href="{{ route('student_index_path')}}"><i class="fa fa-address-book" aria-hidden="true"></i> Estudiantes</a></li>
         <li class="{{ Request::is('users') ? 'open' : '' }}"><a href="{{ route('users_index_path')}}"><i class="fa fa-users" aria-hidden="true"></i> Usuarios</a></li>
-        <li class="{{ Request::is('users/angularjs') ? 'open' : '' }}"><a href="{{ url('users-angulajs')}}"><i class="fa fa-users" aria-hidden="true"></i> Usuarios Angular</a></li>
-        <li class="#"><a href="{{ route('roles_index_path')}}"><i class="fa fa-user-circle" aria-hidden="true"></i> Roles</a></li>
+        <li class="{{ Request::is('users-angulajs') ? 'open' : '' }}"><a href="{{ url('users-angulajs')}}"><i class="fa fa-user-o" aria-hidden="true"></i> Usuarios Angular</a></li>
+        <li class="{{ Request::is('roles') ? 'open' : '' }}"><a href="{{ route('roles_index_path')}}"><i class="fa fa-user-circle" aria-hidden="true"></i> Roles</a></li>
         <li><a href="#"><i class="fa fa-edit"></i> Tu Perfil</a></li>
         <li><a href="{{ route('log_logout_path')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Cerrar sesión</a></li>
 

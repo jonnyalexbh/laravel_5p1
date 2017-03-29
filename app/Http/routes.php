@@ -37,15 +37,21 @@ Route::get('logout', [
 
 // Users angularjs routes...
 
-Route::get('/users-angulajs', [
-  'as' => 'angular_path',
-  'uses' => 'UsersAngularController@index'
-]);
+Route::group(['middleware' => 'auth'], function () {  // middleware only authenticated
 
-Route::get('users-angularjs', [
-  'as' => 'users_angular_path',
-  'uses' => 'UsersAngularController@users'
-]);
+  Route::get('/users-angulajs', [
+    'as' => 'angular_path',
+    'uses' => 'UsersAngularController@index',
+    'middleware' => ['permission:users-angular']
+  ]);
+
+  Route::get('users-angularjs', [
+    'as' => 'users_angular_path',
+    'uses' => 'UsersAngularController@users'
+  ]);
+
+}); // end middleware only authenticated
+
 
 // Users routes...
 

@@ -17,10 +17,9 @@ CanResetPasswordContract
 {
   use Authenticatable, Authorizable, CanResetPassword, EntrustUserTrait
   {
-    Authorizable::can insteadof EntrustUserTrait;
-    EntrustUserTrait::can as hasPermission;
+    EntrustUserTrait::can insteadof Authorizable;
   }
-
+  
   /**
   * The database table used by the model.
   *
