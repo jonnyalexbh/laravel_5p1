@@ -17,6 +17,11 @@ angular.module('myApp', ['ngRoute', 'ngResource'])  // creating the module
     templateUrl: "/app/views/create.html"
   });
 
+  $routeProvider.when("/index/show/:id", {
+    controller: "showUserCtrl",
+    templateUrl: "/app/views/show.html"
+  });
+
   $routeProvider.otherwise("/index");
 
 }]);

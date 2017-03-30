@@ -17,6 +17,11 @@ angular.module('myApp', ['ngRoute', 'ngResource'])  // creating the module
     templateUrl: "/app/views/create.html"
   });
 
+  $routeProvider.when("/index/show/:id", {
+    controller: "showUserCtrl",
+    templateUrl: "/app/views/show.html"
+  });
+
   $routeProvider.otherwise("/index");
 
 }]);
@@ -32,7 +37,7 @@ angular.module('myApp')
 /*
 * file usersCtrl.js
 */
-angular.module('myApp').controller("usersCtrl", function($scope, $location, usersService){
+angular.module('myApp').controller("usersCtrl", ['$scope', '$location', 'usersService', function($scope, $location, usersService){
   $scope.title = "Usuarios AngularJs";
   $scope.users = [];
   $scope.users = usersService.query();
@@ -41,8 +46,20 @@ angular.module('myApp').controller("usersCtrl", function($scope, $location, user
     usersService.delete({ id: id });
     $location.path("/");
   }
-  
-});
+
+}]);
+
+/*
+* file showUserCtrl.js
+*/
+angular.module('myApp').
+controller('showUserCtrl', ['$scope', '$routeParams', 'usersService', function($scope, $routeParams, usersService){
+
+  usersService.get({ id: $routeParams.id}, function(data) {
+    $scope.user = data;
+  });
+
+}]);
 
 /*
 * file createUserCtrl.js
