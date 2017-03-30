@@ -1,12 +1,8 @@
 /*
 * file usersCtrl.js
 */
-angular.module('myApp')
-.controller("usersCtrl", ['$scope', 'usersFactory', function($scope, usersFactory){
-  usersFactory.getUsers()
-  .then(function mySucces(response) {
-    $scope.data = response.data;
-  }, function myError(response) {
-    $scope.data = response.statusText;
-  });
-}]);
+angular.module('myApp').controller("usersCtrl", function($scope, usersService){
+  $scope.title = "Usuarios AngularJs";
+  $scope.users = [];
+  $scope.users = usersService.query();
+});

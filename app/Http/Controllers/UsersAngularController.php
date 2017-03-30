@@ -11,12 +11,20 @@ use App\User;
 class UsersAngularController extends Controller
 {
   /**
+  * home
+  *
+  */
+  public function home()
+  {
+    return view('users-angularjs.index');
+  }
+  /**
   * index
   *
   */
   public function index()
   {
-    return view('users-angularjs.index');
+    return User::all();
   }
   /**
   * users
@@ -42,7 +50,7 @@ class UsersAngularController extends Controller
   */
   public function store(Request $request)
   {
-    //
+    return User::create($request->all());
   }
 
   /**

@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h2 class="page-title">Crear usuario</h2>
+      <h2 class="page-title">{{title}}</h2>
     </div>
   </div>
 
@@ -15,7 +15,7 @@
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Nombre:</label>
               <div class="col-md-8">
-                <input type="text" class="form-control input-sm">
+                <input type="text" ng-model="user.name" class="form-control input-sm">
               </div>
             </div>
           </div>
@@ -24,7 +24,7 @@
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Email:</label>
               <div class="col-md-8">
-                <input name="email" type="text" class="form-control input-sm">
+                <input type="text" ng-model="user.email" class="form-control input-sm">
               </div>
             </div>
           </div>
@@ -33,14 +33,14 @@
             <div class="form-group">
               <label for="" class="col-md-2 control-label">Password:</label>
               <div class="col-md-8">
-                <input type="password" class="form-control input-sm">
+                <input type="password" ng-model="user.password" class="form-control input-sm">
               </div>
             </div>
           </div>
           <!-- Text input-->
           <div class="form-group">
             <div class="col-md-12 text-center">
-              <button type="submit" class="btn btn-warning">Guardar</button>
+              <button class="btn btn-warning" ng-click="save()" ng-disabled="disable_submit">{{"Guardar"}}</button>
               <input type="reset" class="btn btn-default" value="Limpiar">
             </div>
           </div>

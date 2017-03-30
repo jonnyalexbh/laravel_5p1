@@ -42,7 +42,8 @@ elixir(function (mix) {
 elixir(function (mix) {
   mix.scripts([
     'app/app-users.js',
+    'app/services/users-services.js',
     'app/controllers/usersCtrl.js',
-    'app/services/users-factory.js'
+    'app/controllers/createUserCtrl.js'
   ], 'public/app/users-angular.js');
 });

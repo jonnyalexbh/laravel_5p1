@@ -41,14 +41,13 @@ Route::group(['middleware' => 'auth'], function () {  // middleware only authent
 
   Route::get('/users-angulajs', [
     'as' => 'angular_path',
-    'uses' => 'UsersAngularController@index',
+    'uses' => 'UsersAngularController@home',
     'middleware' => ['permission:users-angular']
   ]);
 
-  Route::get('users-angularjs', [
-    'as' => 'users_angular_path',
-    'uses' => 'UsersAngularController@users'
-  ]);
+  Route::group(["prefix" => "api"], function(){
+    Route::resource("users" , "UsersAngularController");
+  });
 
 }); // end middleware only authenticated
 

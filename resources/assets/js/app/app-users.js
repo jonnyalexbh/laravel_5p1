@@ -1,7 +1,8 @@
 /*
 * file app-users.js
 */
-angular.module('myApp', ['ngRoute'])  // creating the module
+angular.module('myApp', ['ngRoute', 'ngResource'])  // creating the module
+.constant("base_api", "/api")
 .config(['$routeProvider', function ($routeProvider) {
 
   $routeProvider.when("/", {redirectTo:"/index"});  // route configuration
@@ -10,8 +11,9 @@ angular.module('myApp', ['ngRoute'])  // creating the module
     controller: "usersCtrl",
     templateUrl: "/app/views/index.html"
   });
-  
+
   $routeProvider.when("/index/create", {
+    controller: "createUserCtrl",
     templateUrl: "/app/views/create.html"
   });
 
