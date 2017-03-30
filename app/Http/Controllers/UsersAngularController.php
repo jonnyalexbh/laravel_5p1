@@ -86,6 +86,11 @@ class UsersAngularController extends Controller
   */
   public function destroy($id)
   {
-    //
+    if(User::find($id)->delete()){
+      return ["error" => false];
+    }
+    else{
+      return ["error" => true, "message" => "No fue posible eliminar el registro"];
+    }
   }
 }
