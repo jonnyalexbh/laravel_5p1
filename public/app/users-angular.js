@@ -22,6 +22,11 @@ angular.module('myApp', ['ngRoute', 'ngResource'])  // creating the module
     templateUrl: "/app/views/show.html"
   });
 
+  $routeProvider.when("/index/edit/:id", {
+    controller: "editUserCtrl",
+    templateUrl: "/app/views/create.html"
+  });
+
   $routeProvider.otherwise("/index");
 
 }]);
@@ -31,7 +36,9 @@ angular.module('myApp', ['ngRoute', 'ngResource'])  // creating the module
 */
 angular.module('myApp')
 .factory('usersService', ['$resource',  function($resource) {
-  return $resource('/api/users/:id');
+  return $resource('/api/users/:id', null, {
+    'update': { method:'PUT' }
+  });
 }]);
 
 /*
@@ -82,6 +89,23 @@ angular.module('myApp')
     $location.path("/");
   }
 
+}]);
+
+/*
+* file editUserCtrl.js
+*/
+angular.module('myApp')
+.controller('editUserCtrl', ['$scope', '$routeParams', '$location', 'usersService', function ($scope, $routeParams, $location, usersService) {
+  $scope.title = "Editar usuario";
+  usersService.get({ id: $routeParams.id}, function(data) {
+    $scope.user = data;
+  });
+
+  $scope.save = function(){
+    usersService.update({ id : $routeParams.id}, $scope.user);
+    $location.path("/");
+  }
+  
 }]);
 
 //# sourceMappingURL=users-angular.js.map

@@ -45,6 +45,7 @@ elixir(function (mix) {
     'app/services/users-services.js',
     'app/controllers/usersCtrl.js',
     'app/controllers/showUserCtrl.js',
-    'app/controllers/createUserCtrl.js'
+    'app/controllers/createUserCtrl.js',
+    'app/controllers/editUserCtrl.js'
   ], 'public/app/users-angular.js');
 });

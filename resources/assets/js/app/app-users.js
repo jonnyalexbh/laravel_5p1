@@ -22,6 +22,11 @@ angular.module('myApp', ['ngRoute', 'ngResource'])  // creating the module
     templateUrl: "/app/views/show.html"
   });
 
+  $routeProvider.when("/index/edit/:id", {
+    controller: "editUserCtrl",
+    templateUrl: "/app/views/create.html"
+  });
+
   $routeProvider.otherwise("/index");
 
 }]);

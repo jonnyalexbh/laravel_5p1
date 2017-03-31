@@ -77,7 +77,12 @@ class UsersAngularController extends Controller
   */
   public function update(Request $request, $id)
   {
-    //
+    $user = User::findOrFail($request->input("id"));
+
+    $user->fill($request->all());
+    $user->save();
+
+    return $user;
   }
 
   /**
